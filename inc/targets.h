@@ -11,6 +11,8 @@
 
 //#define AT32DEV_F421
 //#define TEKKO32_F421
+#define TEKKO32_F421_PA2_45A
+//#define RDQ_F421_PB4_30A
 //#define FOXEER_F421
 //#define AIKON_SINGLE_F421
 //#define AIKON_55A_F421
@@ -18,7 +20,25 @@
 
 #endif
 
+#ifdef RDQ_F421_PB4_30A
+#define FIRMWARE_NAME           "RDQ F4 30A  "
+#define FILE_NAME                "RDQ_F421_PB4"
+#define DEAD_TIME               80
+#define HARDWARE_GROUP_AT_A
+#define USE_SERIAL_TELEMETRY
+#endif
 
+#ifdef  TEKKO32_F421_PA2_45A
+#define FIRMWARE_NAME           "TEKKO32 F4  "
+#define FILE_NAME                "TEKKO32_F421"
+#define DEAD_TIME               60
+#define HARDWARE_GROUP_AT_C045
+#define HARDWARE_GROUP_AT_C
+#define USE_SERIAL_TELEMETRY
+#define TARGET_VOLTAGE_DIVIDER  	 74
+#define MILLIVOLT_PER_AMP          50
+#define CURRENT_OFFSET            526
+#endif
 
 #ifdef AT32DEV_F421
 #define FIRMWARE_NAME           "AT32PB4     "
